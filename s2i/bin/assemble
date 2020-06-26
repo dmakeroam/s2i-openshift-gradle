@@ -20,4 +20,5 @@ else
 fi
 
 # Fix source directory permissions
+chown -R 1001:0 /dev/urandom
 fix-permissions ./
