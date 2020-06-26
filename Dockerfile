@@ -35,6 +35,7 @@ ENV GRADLE_HOME /usr/share/gradle
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
 RUN chown -R 1001:0 ./
+RUN chown -R 1001:0 /dev/urandom
 USER 1001
 
 # Set the default CMD to print the usage of the language image
