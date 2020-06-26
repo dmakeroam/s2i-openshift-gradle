@@ -14,9 +14,9 @@ echo "---> Building Spring Boot application from source"
 echo "--> # GRADLE_ARGS = $GRADLE_ARGS"
 if [ -f "gradlew" ]; then
   chmod +x ./gradlew
-  ./gradlew build $GRADLE_ARGS
+  ./gradlew --no-daemon clean build -x test $GRADLE_ARGS
 else
-  gradle build $GRADLE_ARGS
+  gradle --no-daemon clean build -x test $GRADLE_ARGS
 fi
 
 # Fix source directory permissions
