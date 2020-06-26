@@ -2,7 +2,7 @@
 
 set -e
 
-APP_TARGET=${APP_TARGET:-target}
+APP_TARGET=${APP_TARGET:-build/libs}
 echo "---> Starting Spring Boot application"
 echo "--> # APP_TARGET = $APP_TARGET"
 echo "--> # JAVA_OPTS = $JAVA_OPTS"
