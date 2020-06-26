@@ -34,8 +34,7 @@ ENV GRADLE_HOME /usr/share/gradle
 # Add configuration files, bashrc and other tweaks
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 
-RUN chown -R 1001:0 ./
-USER 1001
+USER root
 
 # Set the default CMD to print the usage of the language image
 CMD $STI_SCRIPTS_PATH/usage
