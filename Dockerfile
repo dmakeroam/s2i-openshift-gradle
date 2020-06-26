@@ -10,10 +10,12 @@ EXPOSE 8080
 ENV JAVA_VERSON 1.8.0
 ENV GRADLE_VERSION 6.5
 
-LABEL io.k8s.description="Platform for building and running Spring Boot applications" \
+LABEL architecture="x86_64" \
+      io.k8s.description="Platform for building and running Spring Boot applications" \
       io.k8s.display-name="Spring Boot Gradle 6" \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="builder,java,java8,gradle,gradle6,springboot"
+      io.openshift.tags="builder,java,java8,gradle,gradle6,springboot" \
+      io.openshift.s2i.destination="/tmp" 
 
 RUN yum update -y && \
   yum install -y curl && \
