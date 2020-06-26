@@ -9,7 +9,7 @@ This image is heavily inspired by the awesome [openshift/sti-ruby](https://githu
 To build a simple springboot-sample-app application using standalone S2I and then run the resulting image with Docker execute:
 
 ```
-$ s2i build git://github.com/codecentric/springboot-sample-app dmakeroam/s2i-openshift-gradle springboot-sample-app
+$ s2i build [your_git_repository] dmakeroam/s2i-openshift-gradle:1.0.0 springboot-sample-app
 $ docker run -p 8080:8080 springboot-sample-app
 ```
 
