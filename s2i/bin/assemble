@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+echo "---> Restore build artifacts"
+if [ "$(ls /tmp/artifacts/.gradle 2>/dev/null)" ]; then
+    mv -f /tmp/artifacts/.gradle ${HOME}
+fi
+
+echo "---> Installing application source"
+cp -Rf /tmp/src/. ./
+
+echo "---> Building Spring Boot application from source"
+echo "--> # GRADLE_ARGS = $GRADLE_ARGS"
+if [ -f "gradlew" ]; then
+  chmod +x ./gradlew
+  ./gradlew build $GRADLE_ARGS
+else
+  gradle build $GRADLE_ARGS
+fi
+
+# Fix source directory permissions
+fix-permissions ./

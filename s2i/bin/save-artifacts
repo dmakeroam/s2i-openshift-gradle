@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pushd ${HOME} > /dev/null
+if [ -d .gradle ]; then
+   tar cf - .gradle
+fi
+popd > /dev/null
